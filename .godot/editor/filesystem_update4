@@ -2,10 +2,5 @@ res://addons/EasyMenus/Scenes/main_menu.tscn
 res://addons/EasyMenus/Nodes/startup_loader.tscn
 res://test.tscn
 res://player/player.tscn
-res://utils/cam_area.tscn
-res://CamArea.gd
-res://Camera.gd
-res://utils/camera.tscn
-res://utils/CamArea.gd
 res://utils/Camera.tscn
-res://utils/Camera.gd
+res://player/Avatar.tscn

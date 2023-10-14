@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxn8u3im6jf4m"]
+[gd_scene load_steps=17 format=3 uid="uid://dxn8u3im6jf4m"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_s6eav"]
 [ext_resource type="PackedScene" uid="uid://bg5l3hjgl4sv0" path="res://player/player.tscn" id="2_u8yol"]
@@ -14,9 +14,15 @@ sky_material = SubResource("ProceduralSkyMaterial_mlf70")
 
 [sub_resource type="Environment" id="Environment_3d1v5"]
 background_mode = 2
+background_energy_multiplier = 2.0
 sky = SubResource("Sky_i7lyt")
-tonemap_mode = 2
+tonemap_mode = 3
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[sub_resource type="FogMaterial" id="FogMaterial_576en"]
+edge_fade = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_80udd"]
 size = Vector3(10, 0.2, 1)
@@ -57,6 +63,11 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3d1v5")
+
+[node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6851, 0, -7.24136)
+size = Vector3(28.7259, 14.0871, 18.5355)
+material = SubResource("FogMaterial_576en")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 use_collision = true
@@ -117,3 +128,15 @@ shape = SubResource("BoxShape3D_xuuhg")
 [node name="Camera" parent="CamArea3" instance=ExtResource("4_63il1")]
 transform = Transform3D(0.992546, -3.25817e-10, 0.121869, -0.121869, -5.32708e-09, 0.992546, 3.25819e-10, -1, -5.32708e-09, 0.485485, 5, 1.03361)
 turn_speed = 10
+
+[node name="CamArea4" parent="." instance=ExtResource("3_n2uyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00373864, 0.100007, -4.13376)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CamArea4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56818, -0.529583)
+shape = SubResource("BoxShape3D_xuuhg")
+
+[node name="Camera" parent="CamArea4" instance=ExtResource("4_63il1")]
+transform = Transform3D(0.992546, -3.25817e-10, 0.121869, -0.121869, -5.32708e-09, 0.992546, 3.25819e-10, -1, -5.32708e-09, 0.485485, 5, 1.03361)
+turn_speed = 0
+follow = false
