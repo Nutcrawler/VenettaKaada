@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs4adyiovlus8"]
+
+[ext_resource type="Script" path="res://utils/CamArea.gd" id="1_lidfj"]
+
+[node name="CamArea" type="Area3D"]
+script = ExtResource("1_lidfj")

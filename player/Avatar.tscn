@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkiady814y5q0"]
+
+[ext_resource type="PackedScene" uid="uid://dh7wace1yyan1" path="res://player/Godot_Chan_Cosmic.glb" id="1_j7atl"]
+
+[node name="Godot_Chan_Cosmic" instance=ExtResource("1_j7atl")]
+
+[node name="hair_001" parent="Godot_Chan_Stealth/Skeleton3D" index="3"]
+visible = false
+
+[node name="hair_002" parent="Godot_Chan_Stealth/Skeleton3D" index="4"]
+visible = false
+
+[node name="hair_003" parent="Godot_Chan_Stealth/Skeleton3D" index="5"]
+visible = false
+
+[node name="headphones" parent="Godot_Chan_Stealth/Skeleton3D" index="7"]
+visible = false
