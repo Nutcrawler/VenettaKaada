@@ -6,7 +6,7 @@ func _ready():
 	connect("body_entered", enable_camera)
 	
 func enable_camera(body):
-	print(body)
+#	print(body)
 	if body.name != "Player":
 		return
 	if has_node("Camera"):

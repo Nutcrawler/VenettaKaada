@@ -7,7 +7,8 @@
 height = 1.5041
 radius = 0.174586
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 3
 script = ExtResource("1_hil2a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

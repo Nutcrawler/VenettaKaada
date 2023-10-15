@@ -1,0 +1,159 @@
+[gd_scene load_steps=11 format=3 uid="uid://bmqn6dhyrbeyp"]
+
+[ext_resource type="Script" path="res://utils/door.gd" id="1_284cc"]
+[ext_resource type="PackedScene" uid="uid://b72id5ajoipbt" path="res://utils/interaction/interaction_area/InteractionArea.tscn" id="1_v5jfe"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mlmdj"]
+radius = 1.0
+
+[sub_resource type="Animation" id="Animation_026ra"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotator:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rotator:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Rotator:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2nbqg"]
+resource_name = "close"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotator:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rotator:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.91986, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Rotator:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_0wtsv"]
+resource_name = "open"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotator:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rotator:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1.91986, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Rotator:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vy1oc"]
+_data = {
+"RESET": SubResource("Animation_026ra"),
+"close": SubResource("Animation_2nbqg"),
+"open": SubResource("Animation_0wtsv")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_vvcvq"]
+size = Vector3(0.1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqai2"]
+diffuse_mode = 3
+albedo_color = Color(0.25098, 0.117647, 0.0156863, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v0daq"]
+data = PackedVector3Array(-0.05, 1, 0.5, 0.05, 1, 0.5, -0.05, -1, 0.5, 0.05, 1, 0.5, 0.05, -1, 0.5, -0.05, -1, 0.5, 0.05, 1, -0.5, -0.05, 1, -0.5, 0.05, -1, -0.5, -0.05, 1, -0.5, -0.05, -1, -0.5, 0.05, -1, -0.5, 0.05, 1, 0.5, 0.05, 1, -0.5, 0.05, -1, 0.5, 0.05, 1, -0.5, 0.05, -1, -0.5, 0.05, -1, 0.5, -0.05, 1, -0.5, -0.05, 1, 0.5, -0.05, -1, -0.5, -0.05, 1, 0.5, -0.05, -1, 0.5, -0.05, -1, -0.5, 0.05, 1, 0.5, -0.05, 1, 0.5, 0.05, 1, -0.5, -0.05, 1, 0.5, -0.05, 1, -0.5, 0.05, 1, -0.5, -0.05, -1, 0.5, 0.05, -1, 0.5, -0.05, -1, -0.5, 0.05, -1, 0.5, 0.05, -1, -0.5, -0.05, -1, -0.5)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_284cc")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_v5jfe")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
+shape = SubResource("CylinderShape3D_mlmdj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vy1oc")
+}
+
+[node name="Rotator" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rotator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
+mesh = SubResource("BoxMesh_vvcvq")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_lqai2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rotator/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rotator/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_v0daq")

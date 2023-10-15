@@ -1,9 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxn8u3im6jf4m"]
+[gd_scene load_steps=25 format=3 uid="uid://dxn8u3im6jf4m"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_s6eav"]
 [ext_resource type="PackedScene" uid="uid://bg5l3hjgl4sv0" path="res://player/player.tscn" id="2_u8yol"]
 [ext_resource type="PackedScene" uid="uid://cs4adyiovlus8" path="res://utils/cam_area.tscn" id="3_n2uyv"]
 [ext_resource type="PackedScene" uid="uid://c63cq3gpielyo" path="res://utils/Camera.tscn" id="4_63il1"]
+[ext_resource type="PackedScene" uid="uid://surxabn07v3c" path="res://duck/duck.glb" id="5_sb0hk"]
+[ext_resource type="Texture2D" uid="uid://yltx4kjebvwf" path="res://sky1.png" id="6_uuksa"]
+[ext_resource type="PackedScene" uid="uid://bmqn6dhyrbeyp" path="res://utils/door.tscn" id="7_wo7cx"]
+[ext_resource type="PackedScene" uid="uid://b2bxats50rt8b" path="res://utils/switch.tscn" id="8_8x1xe"]
+[ext_resource type="Script" path="res://switch2.gd" id="8_awq4o"]
+[ext_resource type="Material" uid="uid://cbq0lps3py6n0" path="res://materials/switch_on.tres" id="9_3q7yd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mlf70"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -51,8 +57,15 @@ size = Vector3(10.1141, 2, 1)
 height = 2.87521
 radius = 4.96873
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7otp1"]
+size = Vector3(27.9828, 1.78677, 9.20726)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xuuhg"]
 size = Vector3(3.47476, 1.78677, 3.45177)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0676x"]
+radius = 0.870709
+height = 3.08335
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_s6eav")
@@ -66,6 +79,7 @@ environment = SubResource("Environment_3d1v5")
 
 [node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6851, 0, -7.24136)
+visible = false
 size = Vector3(28.7259, 14.0871, 18.5355)
 material = SubResource("FogMaterial_576en")
 
@@ -109,7 +123,7 @@ size = 6.0
 [node name="CamArea2" parent="." instance=ExtResource("3_n2uyv")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CamArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875337, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875337, 0.795819)
 shape = SubResource("CylinderShape3D_ajrkx")
 
 [node name="Camera" type="Camera3D" parent="CamArea2"]
@@ -122,12 +136,13 @@ size = 7.825
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2981, 0.100007, -1.67862)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CamArea3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56818, -0.529583)
-shape = SubResource("BoxShape3D_xuuhg")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2567, 0.56818, -4.58223)
+shape = SubResource("BoxShape3D_7otp1")
 
 [node name="Camera" parent="CamArea3" instance=ExtResource("4_63il1")]
 transform = Transform3D(0.992546, -3.25817e-10, 0.121869, -0.121869, -5.32708e-09, 0.992546, 3.25819e-10, -1, -5.32708e-09, 0.485485, 5, 1.03361)
 turn_speed = 10
+follow_speed = 5
 
 [node name="CamArea4" parent="." instance=ExtResource("3_n2uyv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00373864, 0.100007, -4.13376)
@@ -140,3 +155,43 @@ shape = SubResource("BoxShape3D_xuuhg")
 transform = Transform3D(0.992546, -3.25817e-10, 0.121869, -0.121869, -5.32708e-09, 0.992546, 3.25819e-10, -1, -5.32708e-09, 0.485485, 5, 1.03361)
 turn_speed = 0
 follow = false
+
+[node name="duck" parent="." instance=ExtResource("5_sb0hk")]
+transform = Transform3D(-0.808125, 0, -2.62441, 0, 2.74601, 0, 2.62441, 0, -0.808125, -33.1478, 0.099999, -13.959)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(542.795, 0, 0, 0, 411.521, 0, 0, 0, 411.521, -1833.95, 70, -896.455)
+billboard = 2
+double_sided = false
+texture_filter = 1
+texture = ExtResource("6_uuksa")
+
+[node name="CamArea5" parent="." instance=ExtResource("3_n2uyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0438, 0.0999957, -13.3495)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CamArea5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815639, 0)
+shape = SubResource("CapsuleShape3D_0676x")
+
+[node name="Camera" parent="CamArea5" instance=ExtResource("4_63il1")]
+transform = Transform3D(0.437696, 0, 0.899123, 0, 1, 0, -0.899123, 0, 0.437696, 0.888226, 1.56, 1.50446)
+turn_speed = 0
+follow = false
+
+[node name="Door" parent="." instance=ExtResource("7_wo7cx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.468339, 0.0999986, -4.91508)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(0.999974, 0, -0.0072256, 0, 1, 0, 0.0072256, 0, 0.999974, -11.0279, 0.966972, -0.144816)
+script = ExtResource("8_awq4o")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Area3D"]
+transform = Transform3D(0.999974, -0.0072256, -3.15841e-10, 0, -4.37114e-08, 1, -0.0072256, -0.999974, -4.37102e-08, 0, 0.953011, 0)
+light_energy = 16.0
+light_negative = true
+shadow_enabled = true
+
+[node name="switch" parent="." node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40766, 0.966972, -0.512411)
+effected = NodePath("../Area3D")
+on_material = ExtResource("9_3q7yd")
