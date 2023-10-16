@@ -6,3 +6,7 @@ using:
 -EasyMenus
 
 -GodotChan model from Godot Third Person Shooter template
+
+-Weird Alien Textures, Yughues @ OGA
+
+-Hangar, zisongbr @ OGA 

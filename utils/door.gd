@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
+@export var locked: bool = false
 
 var open = false
 
@@ -13,6 +14,9 @@ func _process(delta):
 	pass
 
 func _on_interact():
+	if locked:
+		$Locked.play()
+		return
 	if not open:
 		$AnimationPlayer.play("open")
 		open = true
@@ -22,3 +26,6 @@ func _on_interact():
 		open = false
 		print("door close")
 	
+func switch():
+	locked = false
+	$Unlocked.play()

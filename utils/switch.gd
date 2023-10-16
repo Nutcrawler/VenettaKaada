@@ -4,6 +4,7 @@ extends Node3D
 
 @export var effected: Node3D
 @export var on_material: StandardMaterial3D
+@export var method = "_on_interact"
 
 var used = false
 

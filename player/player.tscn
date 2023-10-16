@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1_hil2a"]
 [ext_resource type="PackedScene" uid="uid://bkiady814y5q0" path="res://player/Avatar.tscn" id="1_vi84t"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_rxsl2"]
-height = 1.5041
-radius = 0.174586
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a36gi"]
+radius = 0.175
+height = 1.5
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 3
@@ -13,7 +13,7 @@ script = ExtResource("1_hil2a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.751756, 0)
-shape = SubResource("CylinderShape3D_rxsl2")
+shape = SubResource("CapsuleShape3D_a36gi")
 
 [node name="Avatar" parent="." instance=ExtResource("1_vi84t")]
 
