@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://drsxqom0nrcyb"]
+
+[ext_resource type="Script" path="res://utils/TextPrompt.gd" id="1_1w77i"]
+[ext_resource type="ArrayMesh" uid="uid://cqh31tsgtg1cp" path="res://assets/newspaper.res" id="1_nkaam"]
+[ext_resource type="PackedScene" uid="uid://b72id5ajoipbt" path="res://utils/interaction/interaction_area/InteractionArea.tscn" id="2_nvu4i"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lew38"]
+height = 1.5
+radius = 1.0215
+
+[sub_resource type="LabelSettings" id="LabelSettings_bnnp6"]
+font_size = 26
+outline_size = 5
+outline_color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[node name="TextPrompt" type="Node3D"]
+script = ExtResource("1_1w77i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, -6.18172e-08, 0.707107, 0.707107, 6.18172e-08, 0.707107, -0.707107, 0, 0, 0)
+mesh = ExtResource("1_nkaam")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_nvu4i")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141382, 0.345452, 0.452428)
+shape = SubResource("CylinderShape3D_lew38")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.5
+offset_right = 71.5
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 0
+text = "Hello world"
+label_settings = SubResource("LabelSettings_bnnp6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5skstlfc14ku"]
+[gd_scene load_steps=16 format=3 uid="uid://c5skstlfc14ku"]
 
 [ext_resource type="PackedScene" uid="uid://dfcrwn48bu4cs" path="res://test.glb" id="1_7sc5x"]
 [ext_resource type="Texture2D" uid="uid://djytjn4yk1kl0" path="res://textures/weird_alien_textures/alien_19.jpg" id="2_7vvq8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dogflian7ntlw" path="res://textures/weird_alien_textures/alien_19_spec.jpg" id="4_3ktyd"]
 [ext_resource type="Texture2D" uid="uid://c06iuommwxlwm" path="res://textures/weird_alien_textures/alien_14_norm.jpg" id="4_7mhxt"]
 [ext_resource type="Texture2D" uid="uid://cbmtj6wemp7sk" path="res://textures/weird_alien_textures/alien_14_spec.jpg" id="5_p8g6d"]
+[ext_resource type="LightmapGIData" uid="uid://b47ylxfiyomly" path="res://test-import.lmbake" id="9_q3l1q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nutlf"]
 albedo_texture = ExtResource("2_ydv1n")
@@ -71,7 +72,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jrn3s")
 shape = SubResource("ConcavePolygonShape3D_wd5oe")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37152, 0.103788, 3.5241)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34614, 3.07512, 3.54285)
 light_energy = 8.0
-omni_range = 5.858
+omni_range = 9.0
 omni_attenuation = 0.0490363
+
+[node name="LightmapGI" type="LightmapGI" parent="." index="5"]
+quality = 3
+bounces = 5
+light_data = ExtResource("9_q3l1q")
