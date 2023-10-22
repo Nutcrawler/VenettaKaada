@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dxn8u3im6jf4m"]
+[gd_scene load_steps=31 format=3 uid="uid://dxn8u3im6jf4m"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_s6eav"]
 [ext_resource type="PackedScene" uid="uid://bg5l3hjgl4sv0" path="res://player/player.tscn" id="2_u8yol"]
@@ -12,6 +12,7 @@
 [ext_resource type="Material" uid="uid://cbq0lps3py6n0" path="res://materials/switch_on.tres" id="9_3q7yd"]
 [ext_resource type="PackedScene" uid="uid://c5skstlfc14ku" path="res://test-import.tscn" id="11_eo05m"]
 [ext_resource type="PackedScene" uid="uid://drsxqom0nrcyb" path="res://utils/TextPrompt.tscn" id="12_b3rj3"]
+[ext_resource type="PackedScene" uid="uid://bax6bjyrtowji" path="res://levels/a_1.tscn" id="13_bnw4m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mlf70"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -265,3 +266,6 @@ attributes = SubResource("CameraAttributesPhysical_iyigu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.07348, -1)
 text = "gay
 mers"
+
+[node name="a-1" parent="." instance=ExtResource("13_bnw4m")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -3.68816, 0, 4.65908)

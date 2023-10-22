@@ -12,3 +12,5 @@ using:
 -Hangar, zisongbr @ OGA 
 
 -Room Filler object 2, loafbrr_1 @ OGA
+
+-Wood 043, Ambient CG

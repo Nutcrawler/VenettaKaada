@@ -160,7 +160,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lqai2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rotator/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_v0daq")
 
-[node name="Locked" type="AudioStreamPlayer" parent="."]
+[node name="Locked" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_o7umf")
 volume_db = -0.88
 
