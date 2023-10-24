@@ -3,10 +3,7 @@
 .godot/
 export.cfg
 export_presets.cfg
-*.import
 
-player/*.import
-duck/*.import
 
 # Imported translations (automatically generated from CSV files)
 *.translation
