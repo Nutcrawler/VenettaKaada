@@ -3,10 +3,9 @@
 .godot/
 export.cfg
 export_presets.cfg
-*.import
 
-player/*.import
-duck/*.import
+# .import files are user-specific (?)
+*.import
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -14,3 +13,4 @@ duck/*.import
 # Mono-specific ignores
 .mono/
 data_*/
+mono_crash.*.json
