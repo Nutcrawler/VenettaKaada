@@ -1,14 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5skstlfc14ku"]
+[gd_scene load_steps=15 format=3 uid="uid://c5skstlfc14ku"]
 
-[ext_resource type="PackedScene" uid="uid://dfcrwn48bu4cs" path="res://test.glb" id="1_7sc5x"]
-[ext_resource type="Texture2D" uid="uid://djytjn4yk1kl0" path="res://textures/weird_alien_textures/alien_19.jpg" id="2_7vvq8"]
-[ext_resource type="Texture2D" uid="uid://core2slb5neuv" path="res://textures/weird_alien_textures/alien_14.jpg" id="2_ydv1n"]
-[ext_resource type="Texture2D" uid="uid://dobjb2dw1yynp" path="res://textures/weird_alien_textures/alien_19_norm.jpg" id="3_rdbsg"]
-[ext_resource type="Texture2D" uid="uid://c2n2oij8fy8ls" path="res://textures/weird_alien_textures/alien_14_emit.jpg" id="3_tlxnq"]
-[ext_resource type="Texture2D" uid="uid://dogflian7ntlw" path="res://textures/weird_alien_textures/alien_19_spec.jpg" id="4_3ktyd"]
-[ext_resource type="Texture2D" uid="uid://c06iuommwxlwm" path="res://textures/weird_alien_textures/alien_14_norm.jpg" id="4_7mhxt"]
-[ext_resource type="Texture2D" uid="uid://cbmtj6wemp7sk" path="res://textures/weird_alien_textures/alien_14_spec.jpg" id="5_p8g6d"]
-[ext_resource type="LightmapGIData" uid="uid://b47ylxfiyomly" path="res://test-import.lmbake" id="9_q3l1q"]
+[ext_resource type="PackedScene" uid="uid://b06o0olipi0dv" path="res://test.glb" id="1_7sc5x"]
+[ext_resource type="Texture2D" uid="uid://c58l1srjxoo7d" path="res://textures/weird_alien_textures/alien_19.jpg" id="2_7vvq8"]
+[ext_resource type="Texture2D" uid="uid://dinkxrfx3yayx" path="res://textures/weird_alien_textures/alien_14.jpg" id="2_ydv1n"]
+[ext_resource type="Texture2D" uid="uid://bdljkdtfd2mjh" path="res://textures/weird_alien_textures/alien_19_norm.jpg" id="3_rdbsg"]
+[ext_resource type="Texture2D" uid="uid://dhgc0xuseowvp" path="res://textures/weird_alien_textures/alien_14_emit.jpg" id="3_tlxnq"]
+[ext_resource type="Texture2D" uid="uid://coro22x4id38h" path="res://textures/weird_alien_textures/alien_19_spec.jpg" id="4_3ktyd"]
+[ext_resource type="Texture2D" uid="uid://bfqfcj17nymuw" path="res://textures/weird_alien_textures/alien_14_norm.jpg" id="4_7mhxt"]
+[ext_resource type="Texture2D" uid="uid://chgqa1dbll6n5" path="res://textures/weird_alien_textures/alien_14_spec.jpg" id="5_p8g6d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nutlf"]
 albedo_texture = ExtResource("2_ydv1n")
@@ -66,18 +65,17 @@ shape = SubResource("ConcavePolygonShape3D_jrjan")
 [node name="Cube_001" parent="." index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_jrn3s")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_wd5oe")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="4"]
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34614, 3.07512, 3.54285)
 light_energy = 8.0
 omni_range = 9.0
 omni_attenuation = 0.0490363
 
-[node name="LightmapGI" type="LightmapGI" parent="." index="5"]
+[node name="LightmapGI" type="LightmapGI" parent="." index="4"]
 quality = 3
 bounces = 5
-light_data = ExtResource("9_q3l1q")
