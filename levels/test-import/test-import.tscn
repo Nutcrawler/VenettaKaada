@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c5skstlfc14ku"]
 
-[ext_resource type="PackedScene" uid="uid://b06o0olipi0dv" path="res://test.glb" id="1_7sc5x"]
+[ext_resource type="PackedScene" uid="uid://b06o0olipi0dv" path="res://levels/test-import/test-import.glb" id="1_7sc5x"]
 [ext_resource type="Texture2D" uid="uid://c58l1srjxoo7d" path="res://textures/weird_alien_textures/alien_19.jpg" id="2_7vvq8"]
 [ext_resource type="Texture2D" uid="uid://dinkxrfx3yayx" path="res://textures/weird_alien_textures/alien_14.jpg" id="2_ydv1n"]
 [ext_resource type="Texture2D" uid="uid://bdljkdtfd2mjh" path="res://textures/weird_alien_textures/alien_19_norm.jpg" id="3_rdbsg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://coro22x4id38h" path="res://textures/weird_alien_textures/alien_19_spec.jpg" id="4_3ktyd"]
 [ext_resource type="Texture2D" uid="uid://bfqfcj17nymuw" path="res://textures/weird_alien_textures/alien_14_norm.jpg" id="4_7mhxt"]
 [ext_resource type="Texture2D" uid="uid://chgqa1dbll6n5" path="res://textures/weird_alien_textures/alien_14_spec.jpg" id="5_p8g6d"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nutlf"]
 albedo_texture = ExtResource("2_ydv1n")

@@ -1,10 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dfj3n80xc6nw6"]
 
-[ext_resource type="Texture2D" uid="uid://pto7vrxjov1v" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_Color.jpg" id="1_bw7bl"]
-[ext_resource type="Texture2D" uid="uid://cffa5vu4j2q1e" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_Metalness.jpg" id="2_lbsle"]
-[ext_resource type="Texture2D" uid="uid://c6hmknceyccg" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_Displacement.jpg" id="2_swqpv"]
-[ext_resource type="Texture2D" uid="uid://bh5xqap6ucpi" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_NormalGL.jpg" id="3_80t7g"]
-[ext_resource type="Texture2D" uid="uid://cmknfua6h3hh3" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_Roughness.jpg" id="4_hvhku"]
+[ext_resource type="Texture2D" uid="uid://b2t5sqn7tc5bd" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_Color.jpg" id="1_bw7bl"]
+[ext_resource type="Texture2D" uid="uid://g7v2xq6gry3" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_Metalness.jpg" id="2_lbsle"]
+[ext_resource type="Texture2D" uid="uid://jg14od2kqxh3" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_Displacement.jpg" id="2_swqpv"]
+[ext_resource type="Texture2D" uid="uid://d2n3s41m8p2v4" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_NormalGL.jpg" id="3_80t7g"]
+[ext_resource type="Texture2D" uid="uid://bnvbvev8eycax" path="res://textures/wood_floor_043/WoodFloor043_2K-JPG_Roughness.jpg" id="4_hvhku"]
 
 [resource]
 diffuse_mode = 3

@@ -1,12 +1,13 @@
 [gd_scene load_steps=19 format=3 uid="uid://bax6bjyrtowji"]
 
-[ext_resource type="PackedScene" uid="uid://d256j6l8hybeh" path="res://levels/a-1.glb" id="1_luvey"]
+[ext_resource type="PackedScene" uid="uid://bhdj1e4dyo1wb" path="res://levels/a-1/a-1.glb" id="1_luvey"]
 [ext_resource type="Material" uid="uid://dfj3n80xc6nw6" path="res://textures/wood_floor_043/wood_floor_043.tres" id="2_ciqmi"]
 [ext_resource type="PackedScene" uid="uid://cs4adyiovlus8" path="res://utils/cam_area.tscn" id="2_u771k"]
-[ext_resource type="LightmapGIData" uid="uid://4nysetx668x6" path="res://levels/a_1.lmbake" id="3_7atm4"]
+[ext_resource type="LightmapGIData" uid="uid://4nysetx668x6" path="res://levels/a-1/a_1.lmbake" id="3_7atm4"]
 [ext_resource type="PackedScene" uid="uid://bg5l3hjgl4sv0" path="res://player/player.tscn" id="6_llk1q"]
 [ext_resource type="PackedScene" uid="uid://bmqn6dhyrbeyp" path="res://utils/door.tscn" id="6_wi52g"]
 [ext_resource type="Material" uid="uid://cbq0lps3py6n0" path="res://materials/switch_on.tres" id="7_5kvto"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18f20"]
 resource_name = "Material"

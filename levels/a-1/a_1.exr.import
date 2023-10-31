@@ -3,15 +3,15 @@
 importer="2d_array_texture"
 type="CompressedTexture2DArray"
 uid="uid://bmryi53x2d2hw"
-path="res://.godot/imported/a_1.exr-9f271dbf4115439fc857106fa0271c8f.ctexarray"
+path="res://.godot/imported/a_1.exr-ee84ea77d019bab741b2aa4722ac2aff.ctexarray"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/a_1.exr"
-dest_files=["res://.godot/imported/a_1.exr-9f271dbf4115439fc857106fa0271c8f.ctexarray"]
+source_file="res://levels/a-1/a_1.exr"
+dest_files=["res://.godot/imported/a_1.exr-ee84ea77d019bab741b2aa4722ac2aff.ctexarray"]
 
 [params]
 
