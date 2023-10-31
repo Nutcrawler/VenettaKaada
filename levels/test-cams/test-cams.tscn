@@ -1,0 +1,166 @@
+[gd_scene load_steps=18 format=3 uid="uid://doq7yh7f1owmw"]
+
+[ext_resource type="PackedScene" uid="uid://c7wlwa32dekny" path="res://utils/zKill.tscn" id="1_ig4da"]
+[ext_resource type="PackedScene" uid="uid://bg5l3hjgl4sv0" path="res://player/player.tscn" id="1_j2kpa"]
+[ext_resource type="PackedScene" uid="uid://cs4adyiovlus8" path="res://utils/cam_area.tscn" id="2_6wrv8"]
+[ext_resource type="PackedScene" uid="uid://c63cq3gpielyo" path="res://utils/Camera.tscn" id="3_va63f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cs6sd"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_s37i7"]
+sky_material = SubResource("ProceduralSkyMaterial_cs6sd")
+
+[sub_resource type="Environment" id="Environment_yac6n"]
+background_mode = 2
+sky = SubResource("Sky_s37i7")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_jivrp"]
+size = Vector3(1, 0.2, 18)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yk8nn"]
+data = PackedVector3Array(-0.5, 0.1, 9, 0.5, 0.1, 9, -0.5, -0.1, 9, 0.5, 0.1, 9, 0.5, -0.1, 9, -0.5, -0.1, 9, 0.5, 0.1, -9, -0.5, 0.1, -9, 0.5, -0.1, -9, -0.5, 0.1, -9, -0.5, -0.1, -9, 0.5, -0.1, -9, 0.5, 0.1, 9, 0.5, 0.1, -9, 0.5, -0.1, 9, 0.5, 0.1, -9, 0.5, -0.1, -9, 0.5, -0.1, 9, -0.5, 0.1, -9, -0.5, 0.1, 9, -0.5, -0.1, -9, -0.5, 0.1, 9, -0.5, -0.1, 9, -0.5, -0.1, -9, 0.5, 0.1, 9, -0.5, 0.1, 9, 0.5, 0.1, -9, -0.5, 0.1, 9, -0.5, 0.1, -9, 0.5, 0.1, -9, -0.5, -0.1, 9, 0.5, -0.1, 9, -0.5, -0.1, -9, 0.5, -0.1, 9, 0.5, -0.1, -9, -0.5, -0.1, -9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_au2d8"]
+size = Vector3(10, 0.2, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_insgn"]
+data = PackedVector3Array(-5, 0.1, 1, 5, 0.1, 1, -5, -0.1, 1, 5, 0.1, 1, 5, -0.1, 1, -5, -0.1, 1, 5, 0.1, -1, -5, 0.1, -1, 5, -0.1, -1, -5, 0.1, -1, -5, -0.1, -1, 5, -0.1, -1, 5, 0.1, 1, 5, 0.1, -1, 5, -0.1, 1, 5, 0.1, -1, 5, -0.1, -1, 5, -0.1, 1, -5, 0.1, -1, -5, 0.1, 1, -5, -0.1, -1, -5, 0.1, 1, -5, -0.1, 1, -5, -0.1, -1, 5, 0.1, 1, -5, 0.1, 1, 5, 0.1, -1, -5, 0.1, 1, -5, 0.1, -1, 5, 0.1, -1, -5, -0.1, 1, 5, -0.1, 1, -5, -0.1, -1, 5, -0.1, 1, 5, -0.1, -1, -5, -0.1, -1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14adt"]
+size = Vector3(4, 1, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y3dfx"]
+data = PackedVector3Array(-5, 0.1, 1, 5, 0.1, 1, -5, -0.1, 1, 5, 0.1, 1, 5, -0.1, 1, -5, -0.1, 1, 5, 0.1, -1, -5, 0.1, -1, 5, -0.1, -1, -5, 0.1, -1, -5, -0.1, -1, 5, -0.1, -1, 5, 0.1, 1, 5, 0.1, -1, 5, -0.1, 1, 5, 0.1, -1, 5, -0.1, -1, 5, -0.1, 1, -5, 0.1, -1, -5, 0.1, 1, -5, -0.1, -1, -5, 0.1, 1, -5, -0.1, 1, -5, -0.1, -1, 5, 0.1, 1, -5, 0.1, 1, 5, 0.1, -1, -5, 0.1, 1, -5, 0.1, -1, 5, 0.1, -1, -5, -0.1, 1, 5, -0.1, 1, -5, -0.1, -1, 5, -0.1, 1, 5, -0.1, -1, -5, -0.1, -1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_3b76l"]
+left_to_right = -2.0
+size = Vector3(2, 2, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a5g88"]
+data = PackedVector3Array(-5, 1, 1, 1, -1, 1, -1, -1, 1, -5, 1, -1, -1, -1, -1, 1, -1, -1, -5, 1, 1, -5, 1, -1, 1, -1, 1, -5, 1, -1, 1, -1, -1, 1, -1, 1, -5, 1, -1, -5, 1, 1, -1, -1, -1, -5, 1, 1, -1, -1, 1, -1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ub17x"]
+size = Vector3(1, 0.2, 5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pstr0"]
+data = PackedVector3Array(-0.5, 0.1, 2.5, 0.5, 0.1, 2.5, -0.5, -0.1, 2.5, 0.5, 0.1, 2.5, 0.5, -0.1, 2.5, -0.5, -0.1, 2.5, 0.5, 0.1, -2.5, -0.5, 0.1, -2.5, 0.5, -0.1, -2.5, -0.5, 0.1, -2.5, -0.5, -0.1, -2.5, 0.5, -0.1, -2.5, 0.5, 0.1, 2.5, 0.5, 0.1, -2.5, 0.5, -0.1, 2.5, 0.5, 0.1, -2.5, 0.5, -0.1, -2.5, 0.5, -0.1, 2.5, -0.5, 0.1, -2.5, -0.5, 0.1, 2.5, -0.5, -0.1, -2.5, -0.5, 0.1, 2.5, -0.5, -0.1, 2.5, -0.5, -0.1, -2.5, 0.5, 0.1, 2.5, -0.5, 0.1, 2.5, 0.5, 0.1, -2.5, -0.5, 0.1, 2.5, -0.5, 0.1, -2.5, 0.5, 0.1, -2.5, -0.5, -0.1, 2.5, 0.5, -0.1, 2.5, -0.5, -0.1, -2.5, 0.5, -0.1, 2.5, 0.5, -0.1, -2.5, -0.5, -0.1, -2.5)
+
+[node name="test-cams" type="Node3D"]
+
+[node name="zKill" parent="." instance=ExtResource("1_ig4da")]
+
+[node name="Player" parent="." instance=ExtResource("1_j2kpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 8)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yac6n")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Catwalk" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_jivrp")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Catwalk"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Catwalk/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yk8nn")
+
+[node name="Static" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 8)
+mesh = SubResource("BoxMesh_au2d8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Static"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_insgn")
+
+[node name="CamArea" parent="Static" instance=ExtResource("2_6wrv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static/CamArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+shape = SubResource("BoxShape3D_14adt")
+
+[node name="Camera" type="Camera3D" parent="Static/CamArea"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 1, 0)
+
+[node name="Label3D" type="Label3D" parent="Static"]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 4.60061, 0.317009, 0)
+text = "Static"
+font_size = 64
+
+[node name="Follow" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+mesh = SubResource("BoxMesh_au2d8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Follow"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Follow/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_insgn")
+
+[node name="CamArea" parent="Follow" instance=ExtResource("2_6wrv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Follow/CamArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+shape = SubResource("BoxShape3D_14adt")
+
+[node name="Camera" parent="Follow/CamArea" instance=ExtResource("3_va63f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 1, 0)
+follow = true
+reset_on_exit = true
+
+[node name="Label3D" type="Label3D" parent="Follow"]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 4.601, 0.317, 0)
+text = "Follow"
+font_size = 64
+
+[node name="Tracking" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2)
+mesh = SubResource("BoxMesh_au2d8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tracking"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tracking/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_y3dfx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tracking"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+mesh = SubResource("PrismMesh_3b76l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tracking/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tracking/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_a5g88")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tracking/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.9, 0)
+mesh = SubResource("BoxMesh_ub17x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tracking/MeshInstance3D/StaticBody3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tracking/MeshInstance3D/StaticBody3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pstr0")
+
+[node name="CamArea" parent="Tracking" instance=ExtResource("2_6wrv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tracking/CamArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+shape = SubResource("BoxShape3D_14adt")
+
+[node name="Camera" parent="Tracking/CamArea" instance=ExtResource("3_va63f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 1, 0)
+reset_on_exit = true
+
+[node name="Label3D" type="Label3D" parent="Tracking"]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 0, -4.37114e-08, 4.601, 0.317, 0)
+text = "Tracking"
+font_size = 64

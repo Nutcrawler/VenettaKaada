@@ -7,6 +7,7 @@ size = Vector3(99999, 0.01, 99999)
 
 [node name="zKill" type="Area3D"]
 script = ExtResource("1_lbaim")
+depth = -100.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_prn42")

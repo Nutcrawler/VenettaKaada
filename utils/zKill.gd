@@ -2,6 +2,7 @@ extends Area3D
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @export var depth: float = -500
+@export var cause: String = "fall"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,4 +18,4 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body == player:
-		GameInstance.player_death("fall")
+		GameInstance.player_death(cause)

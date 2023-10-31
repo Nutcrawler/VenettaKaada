@@ -3,11 +3,13 @@ extends Node2D
 var current_scene = null
 @export var starting_scene = "res://levels/a-1/a_1.tscn"
 
+var current_cam
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
-	print_debug(current_scene)
+	print_debug("Current scene: ", current_scene)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,7 +45,7 @@ func _deferred_goto_scene(path):
 	get_tree().current_scene = current_scene
 	
 	
-	print_debug(current_scene)
+	print_debug("Current scene: ", current_scene)
 
 func player_death(reason):
 	match reason:

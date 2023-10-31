@@ -66,9 +66,8 @@ size = Vector3(27.9828, 1.78677, 9.20726)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xuuhg"]
 size = Vector3(3.47476, 1.78677, 3.45177)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0676x"]
-radius = 0.870709
-height = 3.08335
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_51beq"]
+radius = 2.71439
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1esga"]
 size = Vector3(3.39374, 1, 1)
@@ -184,8 +183,8 @@ texture = ExtResource("6_uuksa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0438, 0.0999957, -13.3495)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CamArea5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815639, 0)
-shape = SubResource("CapsuleShape3D_0676x")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20299, 0.815639, -0.50552)
+shape = SubResource("CylinderShape3D_51beq")
 
 [node name="Camera" parent="CamArea5" instance=ExtResource("4_63il1")]
 transform = Transform3D(0.437696, 0, 0.899123, 0, 1, 0, -0.899123, 0, 0.437696, 0.888226, 1.56, 1.50446)
@@ -221,7 +220,7 @@ effected = NodePath("../Area3D")
 on_material = ExtResource("9_3q7yd")
 
 [node name="switch2" parent="." node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
-transform = Transform3D(-0.928984, 0, 0.37012, 0, 1, 0, -0.37012, 0, -0.928984, -33.3084, 0.966972, -13.1474)
+transform = Transform3D(-0.946649, 0, 0.322266, 0, 1, 0, -0.322266, 0, -0.946649, -33.3084, 1.42199, -13.2424)
 effected = NodePath("../Door2")
 on_material = ExtResource("9_3q7yd")
 method = "_switched"

@@ -2,14 +2,18 @@ extends Camera3D
 
 @export var turn_speed = 60
 @export var follow_dist = 5
-@export var follow = true
+@export var follow = false
 @export var follow_speed = 2
+#@export var track = true #TODO later
+@export var reset_on_exit = false
+
+@onready var initial_transform 
 
 var target = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	initial_transform = global_transform
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,3 +42,9 @@ func _process(delta):
 
 func set_target(t):
 	target = t
+
+func reset_transform():
+	if reset_on_exit == true:
+		global_transform = initial_transform
+	else:
+		pass
