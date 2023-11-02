@@ -52,6 +52,7 @@ data = PackedVector3Array(-0.5, 0.1, 2.5, 0.5, 0.1, 2.5, -0.5, -0.1, 2.5, 0.5, 0
 [node name="test-cams" type="Node3D"]
 
 [node name="zKill" parent="." instance=ExtResource("1_ig4da")]
+depth = -20.0
 
 [node name="Player" parent="." instance=ExtResource("1_j2kpa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 8)

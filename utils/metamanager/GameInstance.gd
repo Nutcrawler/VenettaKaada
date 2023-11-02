@@ -10,6 +10,7 @@ func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 	print_debug("Current scene: ", current_scene)
+	$DeathScreen.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,4 +56,16 @@ func player_death(reason):
 			print("Yep, you've taken damage")
 		"fall":
 			print("Splat!")
-	# TODO - respawn player
+	$DeathScreen.show()
+	if EditorDebuggerSession:
+		$RespawnTimer.start(1)
+		return
+	$RespawnTimer.start()
+
+
+func _on_respawn_timer_timeout():
+	$DeathScreen.hide()
+	$RespawnTimer.stop()
+#	goto_scene(current_scene)
+	print_debug(current_scene)
+	get_tree().reload_current_scene()

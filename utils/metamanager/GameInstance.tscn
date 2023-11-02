@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdxl8n0u1yre3"]
+[gd_scene load_steps=3 format=3 uid="uid://bdxl8n0u1yre3"]
 
 [ext_resource type="Script" path="res://utils/metamanager/GameInstance.gd" id="1_1j6ag"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_y0vb2"]
+font_size = 321
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
 [node name="GameInstance" type="Node2D"]
 script = ExtResource("1_1j6ag")
+metadata/_edit_vertical_guides_ = [1920.0]
+metadata/_edit_horizontal_guides_ = [1080.0]
+
+[node name="DeathScreen" type="Label" parent="."]
+offset_right = 1925.0
+offset_bottom = 1072.0
+text = "died ;_;"
+label_settings = SubResource("LabelSettings_y0vb2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
