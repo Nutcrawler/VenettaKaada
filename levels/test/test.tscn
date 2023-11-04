@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dxn8u3im6jf4m"]
+[gd_scene load_steps=34 format=3 uid="uid://dxn8u3im6jf4m"]
 
 [ext_resource type="Script" path="res://levels/test/test.gd" id="1_s6eav"]
 [ext_resource type="PackedScene" uid="uid://bg5l3hjgl4sv0" path="res://player/player.tscn" id="2_u8yol"]
@@ -9,10 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bmqn6dhyrbeyp" path="res://utils/door.tscn" id="7_wo7cx"]
 [ext_resource type="PackedScene" uid="uid://b2bxats50rt8b" path="res://utils/switch.tscn" id="8_8x1xe"]
 [ext_resource type="Script" path="res://levels/test/switch2.gd" id="8_awq4o"]
-[ext_resource type="Material" uid="uid://cbq0lps3py6n0" path="res://materials/switch_on.tres" id="9_3q7yd"]
 [ext_resource type="PackedScene" uid="uid://c5skstlfc14ku" path="res://levels/test-import/test-import.tscn" id="11_eo05m"]
 [ext_resource type="PackedScene" uid="uid://drsxqom0nrcyb" path="res://utils/TextPrompt.tscn" id="12_b3rj3"]
-[ext_resource type="PackedScene" uid="uid://bax6bjyrtowji" path="res://levels/a-1/a_1.tscn" id="13_bnw4m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mlf70"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -32,6 +30,24 @@ volumetric_fog_density = 0.0
 
 [sub_resource type="FogMaterial" id="FogMaterial_576en"]
 edge_fade = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h54vl"]
+size = Vector3(3.96454, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n4fpn"]
+size = Vector3(1, 1, 0.29)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tb6m"]
+transparency = 1
+albedo_color = Color(0, 1, 0.0823529, 0.188235)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_klas4"]
+radius = 2.6
+height = 5.2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_73iyd"]
+radius = 2.6
+height = 5.2
 
 [sub_resource type="BoxMesh" id="BoxMesh_80udd"]
 size = Vector3(10, 0.2, 1)
@@ -101,6 +117,78 @@ radius = 5.0
 height = 0.2
 sides = 12
 
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23582, 0, 0)
+size = Vector3(5, 0.2, 1)
+
+[node name="CamArea" parent="CSGCylinder3D/CSGBox3D" instance=ExtResource("3_n2uyv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGCylinder3D/CSGBox3D/CamArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.527798, 0.938753, 0)
+shape = SubResource("BoxShape3D_h54vl")
+
+[node name="Camera" type="Camera3D" parent="CSGCylinder3D/CSGBox3D/CamArea"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.47142, 2.01338, 0)
+fov = 60.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGCylinder3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23683, 1.19911, 0)
+mesh = SubResource("BoxMesh_n4fpn")
+surface_material_override/0 = SubResource("StandardMaterial3D_4tb6m")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9732, 6.0637, -2.85495)
+size = Vector3(5, 0.2, 10.6579)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4789, 0, 0)
+size = Vector3(10, 0.2, 2)
+
+[node name="switch" parent="CSGCylinder3D/CSGBox3D2" node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 1.039, 0)
+effected = NodePath("x-switch-l")
+
+[node name="CollisionShape3D" parent="CSGCylinder3D/CSGBox3D2/switch/InteractionArea" index="0"]
+shape = SubResource("CapsuleShape3D_klas4")
+
+[node name="x-switch-l" type="Area3D" parent="CSGCylinder3D/CSGBox3D2/switch"]
+transform = Transform3D(0.999974, 0, -0.0072256, 0, 1, 0, 0.0072256, 0, 0.999974, 0, 0, 0)
+script = ExtResource("8_awq4o")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CSGCylinder3D/CSGBox3D2/switch/x-switch-l"]
+transform = Transform3D(0.991256, -0.00722561, 0.131752, -0.131755, -4.16573e-08, 0.991282, -0.00716261, -0.999974, -0.000952052, 0, 3.87159, 0)
+visible = false
+light_color = Color(0, 0, 1, 1)
+light_energy = 8.0
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 1.46409
+spot_angle_attenuation = 0.125
+
+[node name="switch2" parent="CSGCylinder3D/CSGBox3D2" node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.311, 0)
+effected = NodePath("x-switch-r")
+
+[node name="MeshInstance3D" parent="CSGCylinder3D/CSGBox3D2/switch2" index="0"]
+skeleton = NodePath("../../switch2")
+
+[node name="CollisionShape3D" parent="CSGCylinder3D/CSGBox3D2/switch2/InteractionArea" index="0"]
+shape = SubResource("CapsuleShape3D_73iyd")
+
+[node name="x-switch-r" type="Area3D" parent="CSGCylinder3D/CSGBox3D2/switch2"]
+transform = Transform3D(0.999974, 0, -0.0072256, 0, 1, 0, 0.0072256, 0, 0.999974, 0, 0, 0)
+script = ExtResource("8_awq4o")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CSGCylinder3D/CSGBox3D2/switch2/x-switch-r"]
+transform = Transform3D(0.991256, -0.00722561, 0.131752, -0.131755, -4.16667e-08, 0.991282, -0.00716261, -0.999974, -0.000952052, 0, 4.87159, 0)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 8.0
+shadow_enabled = true
+spot_range = 4096.0
+spot_attenuation = 1.46409
+spot_angle_attenuation = 0.125
+
 [node name="Player" parent="." instance=ExtResource("2_u8yol")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -166,7 +254,6 @@ shape = SubResource("BoxShape3D_xuuhg")
 [node name="Camera" parent="CamArea4" instance=ExtResource("4_63il1")]
 transform = Transform3D(0.992546, -3.25817e-10, 0.121869, -0.121869, -5.32708e-09, 0.992546, 3.25819e-10, -1, -5.32708e-09, 0.485485, 5, 1.03361)
 turn_speed = 0
-follow = false
 
 [node name="duck" parent="." instance=ExtResource("5_sb0hk")]
 transform = Transform3D(-0.808125, 0, -2.62441, 0, 2.74601, 0, 2.62441, 0, -0.808125, -33.1478, 0.099999, -13.959)
@@ -189,7 +276,6 @@ shape = SubResource("CylinderShape3D_51beq")
 [node name="Camera" parent="CamArea5" instance=ExtResource("4_63il1")]
 transform = Transform3D(0.437696, 0, 0.899123, 0, 1, 0, -0.899123, 0, 0.437696, 0.888226, 1.56, 1.50446)
 turn_speed = 0
-follow = false
 
 [node name="Door" parent="." instance=ExtResource("7_wo7cx")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.468339, 0.0999986, -4.91508)
@@ -217,13 +303,11 @@ spot_angle_attenuation = 0.125
 [node name="switch" parent="." node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40766, 0.966972, -0.512411)
 effected = NodePath("../Area3D")
-on_material = ExtResource("9_3q7yd")
+switchback = true
 
 [node name="switch2" parent="." node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
 transform = Transform3D(-0.946649, 0, 0.322266, 0, 1, 0, -0.322266, 0, -0.946649, -33.3084, 1.42199, -13.2424)
 effected = NodePath("../Door2")
-on_material = ExtResource("9_3q7yd")
-method = "_switched"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0280294, -1.40071e-06, -6.46059)
@@ -266,5 +350,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.07348, -1)
 text = "gay
 mers"
 
-[node name="a-1" parent="." instance=ExtResource("13_bnw4m")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -3.68816, 0, 4.65908)
+[editable path="CSGCylinder3D/CSGBox3D2/switch"]
+[editable path="CSGCylinder3D/CSGBox3D2/switch2"]

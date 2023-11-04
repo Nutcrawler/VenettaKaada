@@ -16,10 +16,11 @@ func unregister_area(area: InteractionArea):
 	if index != -1: #If <area> exists in <active_areas>
 		active_areas.remove_at(index)
 
-#func _sort_by_distance_to_player(area1, area2):
-#	var area1ToPlayer = player.global_positon.distance_to(area1.global_position)
-#	var area2ToPlayer = player.global_positon.distance_to(area2.global_position)
-#	return area1ToPlayer < area2ToPlayer
+func _sort_by_distance_to_player(area1, area2):
+	var area1ToPlayer = player.global_position.distance_to(area1.global_position)
+	var area2ToPlayer = player.global_position.distance_to(area2.global_position)
+#	print_debug(area1ToPlayer < area2ToPlayer)
+	return area1ToPlayer < area2ToPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,7 +33,7 @@ func _process(delta):
 #	print(active_areas)
 #	label.show()
 	if active_areas.size() > 0 && can_interact:
-#		active_areas.sort_custom(_sort_by_distance_to_player)
+		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = BASE_TEXT + active_areas[0].action_name
 		var middle_x = get_window().get_visible_rect().size.x / 2 - (label.size.x / 2)
 		var middle_y = get_window().get_visible_rect().size.y / 2 - (label.size.y / 2)

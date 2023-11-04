@@ -16,6 +16,7 @@ var aiming = false
 
 
 func _physics_process(delta):
+#	debug_interaction()
 	var move_dir = 0
 	var turn_dir = 0
 	if Input.is_action_pressed("move_forwards"):
@@ -75,3 +76,6 @@ func play_anim(name):
 
 func enable_camera():
 	pass
+
+func debug_interaction():
+	print_debug(InteractionManager.active_areas)

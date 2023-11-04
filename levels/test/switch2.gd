@@ -12,3 +12,6 @@ func _process(delta):
 
 func switch():
 	$SpotLight3D.visible = 1
+
+func switch_back():
+	$SpotLight3D.visible = 0
