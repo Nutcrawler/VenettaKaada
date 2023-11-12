@@ -242,6 +242,7 @@ shape = SubResource("BoxShape3D_7otp1")
 [node name="Camera" parent="CamArea3" instance=ExtResource("4_63il1")]
 transform = Transform3D(0.992546, -3.25817e-10, 0.121869, -0.121869, -5.32708e-09, 0.992546, 3.25819e-10, -1, -5.32708e-09, 0.485485, 5, 1.03361)
 turn_speed = 10
+follow = true
 follow_speed = 5
 
 [node name="CamArea4" parent="." instance=ExtResource("3_n2uyv")]
@@ -347,8 +348,10 @@ attributes = SubResource("CameraAttributesPhysical_iyigu")
 
 [node name="TextPrompt" parent="." instance=ExtResource("12_b3rj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.07348, -1)
-text = "gay
-mers"
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus iaculis urna id volutpat lacus laoreet. Quis hendrerit dolor magna eget est lorem ipsum. Morbi enim nunc faucibus a pellentesque sit amet. Mus mauris vitae ultricies leo integer malesuada. Et malesuada fames ac turpis. Eget duis at tellus at. Non odio euismod lacinia at. Sodales neque sodales ut etiam sit amet nisl purus in. Arcu dui vivamus arcu felis bibendum. Nec tincidunt praesent semper feugiat.
+
+Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Eleifend donec pretium vulputate sapien nec sagittis. Nisl nunc mi ipsum faucibus. Turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus. Maecenas sed enim ut sem viverra aliquet eget sit."
+metadata/_edit_horizontal_guides_ = [720.0]
 
 [editable path="CSGCylinder3D/CSGBox3D2/switch"]
 [editable path="CSGCylinder3D/CSGBox3D2/switch2"]

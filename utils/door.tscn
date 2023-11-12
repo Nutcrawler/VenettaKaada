@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://utils/door.gd" id="1_284cc"]
 [ext_resource type="PackedScene" uid="uid://b72id5ajoipbt" path="res://utils/interaction/interaction_area/InteractionArea.tscn" id="1_v5jfe"]
-[ext_resource type="AudioStream" uid="uid://wucbqqmk3ipw" path="res://sounds/chirp.wav" id="3_o7umf"]
-[ext_resource type="AudioStream" uid="uid://v4ufc2e5e5os" path="res://sounds/chirp2.wav" id="4_adlbh"]
+[ext_resource type="AudioStream" uid="uid://cfyhjcnv4s27a" path="res://sounds/chirp.wav" id="3_o7umf"]
+[ext_resource type="AudioStream" uid="uid://ckyb505jcgpbo" path="res://sounds/chirp2.wav" id="4_adlbh"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mlmdj"]
 radius = 1.0

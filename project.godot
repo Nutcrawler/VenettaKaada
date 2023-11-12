@@ -21,6 +21,11 @@ MenuTemplateManager="*res://addons/EasyMenus/Nodes/menu_template_manager.tscn"
 InteractionManager="*res://utils/interaction/InteractionManager.tscn"
 GameInstance="*res://utils/metamanager/GameInstance.tscn"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [filesystem]
 
 import/fbx/enabled=false

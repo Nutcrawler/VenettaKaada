@@ -15,6 +15,8 @@ outline_color = Color(0.172549, 0.172549, 0.172549, 1)
 
 [node name="TextPrompt" type="Node3D"]
 script = ExtResource("1_1w77i")
+metadata/_edit_horizontal_guides_ = [720.0, 720.0]
+metadata/_edit_vertical_guides_ = [1280.0]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, -6.18172e-08, 0.707107, 0.707107, 6.18172e-08, 0.707107, -0.707107, 0, 0, 0)
@@ -32,15 +34,10 @@ one_shot = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -49,14 +46,23 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -71.5
-offset_right = 71.5
-offset_bottom = 39.0
+offset_left = -389.0
+offset_right = 389.0
+offset_bottom = 323.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 0
-text = "Hello world"
+text = "Hello World!"
 label_settings = SubResource("LabelSettings_bnnp6")
 horizontal_alignment = 1
-vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control/Label"]
+z_index = -1
+layout_mode = 0
+color = Color(0, 0, 0, 0.662745)
+
+[node name="bgTimer" type="Timer" parent="."]
+wait_time = 0.016
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="bgTimer" to="." method="_update_bgsq"]
