@@ -1,9 +1,12 @@
 extends Node2D
 
 var current_scene = null
-@export var starting_scene = "res://levels/a-1/a_1.tscn"
+#@export var starting_scene = "res://levels/a-1/a_1.tscn"
+@export var starting_scene = "res://levels/test/test.tscn"
 
 var current_cam
+
+var total_game_delta = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +18,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	total_game_delta += delta
+#	print(total_game_delta)
 	pass
 	
 func goto_scene(path):
