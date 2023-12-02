@@ -5,6 +5,8 @@ using:
 
 -EasyMenus
 
+-Qodot
+
 -GodotChan model from Godot Third Person Shooter template
 
 -Weird Alien Textures, Yughues @ OGA

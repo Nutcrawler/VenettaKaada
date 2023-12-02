@@ -17,10 +17,12 @@ func unregister_area(area: InteractionArea):
 		active_areas.remove_at(index)
 
 func _sort_by_distance_to_player(area1, area2):
-	var area1ToPlayer = player.global_position.distance_to(area1.global_position)
-	var area2ToPlayer = player.global_position.distance_to(area2.global_position)
+#	var area1ToPlayer = player.global_position.distance_to(area1.global_position)
+#	var area2ToPlayer = player.global_position.distance_to(area2.global_position)
 #	print_debug(area1ToPlayer < area2ToPlayer)
-	return area1ToPlayer < area2ToPlayer
+#	return area1ToPlayer < area2ToPlayer
+	#distance bugged so just return most recent
+	return active_areas.back()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
