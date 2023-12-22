@@ -134,6 +134,7 @@ shape = SubResource("BoxShape3D_2rt33")
 
 [node name="Camera" type="Camera3D" parent="CamArea" index="1"]
 transform = Transform3D(0.900319, -0.214318, 0.378806, 0, 0.870356, 0.492424, -0.435231, -0.443338, 0.783598, 2.4, 2.362, 1.683)
+current = true
 fov = 58.0
 
 [node name="CamArea2" parent="." index="5" instance=ExtResource("2_u771k")]

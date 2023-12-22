@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkiady814y5q0"]
 
-[ext_resource type="PackedScene" uid="uid://be3i3u0nn4sgl" path="res://player/Godot_Chan_Cosmic.glb" id="1_j7atl"]
+[ext_resource type="PackedScene" uid="uid://k0rph5ii5gr5" path="res://player/Godot_Chan_Cosmic.glb" id="1_j7atl"]
 
 [node name="Godot_Chan_Cosmic" instance=ExtResource("1_j7atl")]
 

@@ -344,10 +344,9 @@ size = Vector3(5, 0.2, 10.6579)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4789, 0, 0)
 size = Vector3(10, 0.2, 2)
 
-[node name="switch" parent="CSGCylinder3D/CSGBox3D2" instance=ExtResource("8_8x1xe")]
+[node name="switch" parent="CSGCylinder3D/CSGBox3D2" node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 1.039, 0)
-effected = Object(Area3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(0.999974, 0, -0.0072256, 0, 1, 0, 0.0072256, 0, 0.999974, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_ray_pickable":true,"input_capture_on_drag":false,"monitoring":true,"monitorable":true,"priority":0,"gravity_space_override":0,"gravity_point":false,"gravity_point_unit_distance":0.0,"gravity_point_center":Vector3(0, -1, 0),"gravity_direction":Vector3(0, -1, 0),"gravity":9.8,"linear_damp_space_override":0,"linear_damp":0.1,"angular_damp_space_override":0,"angular_damp":0.1,"wind_force_magnitude":0.0,"wind_attenuation_factor":0.0,"wind_source_path":NodePath(""),"audio_bus_override":false,"audio_bus_name":&"Master","reverb_bus_enabled":false,"reverb_bus_name":&"Master","reverb_bus_amount":0.0,"reverb_bus_uniformity":0.0,"script":ExtResource("8_awq4o"))
-
+effected = NodePath("")
 
 [node name="CollisionShape3D" parent="CSGCylinder3D/CSGBox3D2/switch/InteractionArea" index="0"]
 shape = SubResource("CapsuleShape3D_klas4")
@@ -366,10 +365,9 @@ spot_range = 4096.0
 spot_attenuation = 1.46409
 spot_angle_attenuation = 0.125
 
-[node name="switch2" parent="CSGCylinder3D/CSGBox3D2" instance=ExtResource("8_8x1xe")]
+[node name="switch2" parent="CSGCylinder3D/CSGBox3D2" node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.311, 0)
-effected = Object(Area3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(0.999974, 0, -0.0072256, 0, 1, 0, 0.0072256, 0, 0.999974, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_ray_pickable":true,"input_capture_on_drag":false,"monitoring":true,"monitorable":true,"priority":0,"gravity_space_override":0,"gravity_point":false,"gravity_point_unit_distance":0.0,"gravity_point_center":Vector3(0, -1, 0),"gravity_direction":Vector3(0, -1, 0),"gravity":9.8,"linear_damp_space_override":0,"linear_damp":0.1,"angular_damp_space_override":0,"angular_damp":0.1,"wind_force_magnitude":0.0,"wind_attenuation_factor":0.0,"wind_source_path":NodePath(""),"audio_bus_override":false,"audio_bus_name":&"Master","reverb_bus_enabled":false,"reverb_bus_name":&"Master","reverb_bus_amount":0.0,"reverb_bus_uniformity":0.0,"script":ExtResource("8_awq4o"))
-
+effected = NodePath("")
 
 [node name="MeshInstance3D" parent="CSGCylinder3D/CSGBox3D2/switch2" index="0"]
 skeleton = NodePath("../../switch2")
@@ -516,16 +514,14 @@ spot_range = 4096.0
 spot_attenuation = 1.46409
 spot_angle_attenuation = 0.125
 
-[node name="switch" parent="." instance=ExtResource("8_8x1xe")]
+[node name="switch" parent="." node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40766, 0.966972, -0.512411)
+effected = NodePath("")
 switchback = true
-effected = Object(Area3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(0.999974, 0, -0.0072256, 0, 1, 0, 0.0072256, 0, 0.999974, -11.0279, 0.966972, -0.144816),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_ray_pickable":true,"input_capture_on_drag":false,"monitoring":true,"monitorable":true,"priority":0,"gravity_space_override":0,"gravity_point":false,"gravity_point_unit_distance":0.0,"gravity_point_center":Vector3(0, -1, 0),"gravity_direction":Vector3(0, -1, 0),"gravity":9.8,"linear_damp_space_override":0,"linear_damp":0.1,"angular_damp_space_override":0,"angular_damp":0.1,"wind_force_magnitude":0.0,"wind_attenuation_factor":0.0,"wind_source_path":NodePath(""),"audio_bus_override":false,"audio_bus_name":&"Master","reverb_bus_enabled":false,"reverb_bus_name":&"Master","reverb_bus_amount":0.0,"reverb_bus_uniformity":0.0,"script":ExtResource("8_awq4o"))
 
-
-[node name="switch2" parent="." instance=ExtResource("8_8x1xe")]
+[node name="switch2" parent="." node_paths=PackedStringArray("effected") instance=ExtResource("8_8x1xe")]
 transform = Transform3D(-0.946649, 0, 0.322266, 0, 1, 0, -0.322266, 0, -0.946649, -33.3084, 1.42199, -13.2424)
-effected = Object(Node3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.468339, 0.0999986, -7.82258),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"script":Resource("res://utils/door.gd"),"locked":true)
-
+effected = NodePath("")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0280294, -1.40071e-06, -6.46059)

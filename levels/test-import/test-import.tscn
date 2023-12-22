@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bfqfcj17nymuw" path="res://textures/weird_alien_textures/alien_14_norm.jpg" id="4_7mhxt"]
 [ext_resource type="Texture2D" uid="uid://chgqa1dbll6n5" path="res://textures/weird_alien_textures/alien_14_spec.jpg" id="5_p8g6d"]
 
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nutlf"]
 albedo_texture = ExtResource("2_ydv1n")
 metallic = 1.0
